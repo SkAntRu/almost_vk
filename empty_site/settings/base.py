@@ -1,6 +1,6 @@
 import os
 import sys
-from .other.secrets import SOCIAL_AUTH_VK_OAUTH2_KEY, SOCIAL_AUTH_VK_OAUTH2_SECRET
+from .other.secrets import SOCIAL_AUTH_VK_OAUTH2_KEY, SOCIAL_AUTH_VK_OAUTH2_SECRET, SECRET_KEY
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -11,7 +11,6 @@ sys.path.append(os.path.join(PROJECT_ROOT, 'core'))
 DEBUG = False
 
 ALLOWED_HOSTS = ['127.0.0.1', ]
-SECRET_KEY = '8@yvyd(dt0iuqad@2r1hbre3dh6e#8t#k33bidk!l8c=^5-)&l'
 
 # Application definition
 sys.path.append(os.path.join(PROJECT_ROOT, 'apps'))
