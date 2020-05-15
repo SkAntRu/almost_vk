@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Authentificated{% endblock %}
+
+{% block body %}
+<div class="user_block">
+  <div class="user">
+    Привет, {{ user.first_name }}
+    <br>
+    <a href="https://vk.com/id{{ user.social.uid }}">
+      <img src="{{ user.social.extra_data.photo_200_orig }}" alt="Твоя ава" border=1px>
+    </a>
+    <br>
+    Твои 5 друзей:
+  </div>
+</div>
+<table class="user_friends">
+<tr>
+  {% for friend in user.social.friends %}
+  <td>
+    <div class="friend">
+      {{ friend.first_name }}
+      <br>
+      <a href="https://vk.com/id{{ friend.id }}">
+        <img src="{{ friend.photo_100 }}" alt="Ава друга" border=1px>
+      </a>
+    </div>
+  </td>
+  {% endfor %}
+</tr>
+</table>
+{% endblock %}

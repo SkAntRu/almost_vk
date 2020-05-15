@@ -1,0 +1,56 @@
+.top {
+    overflow: hidden;
+    width: 100%;
+    height: 7vh;
+    display:table;
+    background-color: #79aec8;
+}
+.header{
+    display:table-cell;
+    height:100%;
+    text-align: center;
+    vertical-align: middle;
+}
+.login{
+    width: 200px;
+    height:100%;
+    display:table-cell;
+    text-align: center;
+    vertical-align: middle;
+    border: 3px solid white;
+    -webkit-transition: 0.3s;
+    border-radius: 30px;
+    background-color: #8ccde2;
+}
+.login:hover{
+    border: 3px solid black;
+}
+
+/* content */
+body{
+  background-color: #BFCFFF;
+}
+.user_block{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.user{
+  display: inline-block;
+  border: 2px solid black;
+  -webkit-transition: 0.3s;
+}
+.user:hover{
+    border: 2px solid #8F49FF;
+}
+.user_friends{
+  margin: auto;
+}
+.friend{
+  text-align: center;
+  border: 2px solid black;
+  -webkit-transition: 0.3s;
+}
+.friend:hover{
+    border: 2px solid #8F49FF;
+}
