@@ -10,7 +10,7 @@ sys.path.append(os.path.join(PROJECT_ROOT, 'core'))
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1',]
+ALLOWED_HOSTS = ['127.0.0.1', ]
 SECRET_KEY = '8@yvyd(dt0iuqad@2r1hbre3dh6e#8t#k33bidk!l8c=^5-)&l'
 
 # Application definition
