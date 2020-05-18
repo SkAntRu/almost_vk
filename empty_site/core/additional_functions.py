@@ -4,7 +4,7 @@ from datetime import datetime
 from social_django.models import UserSocialAuth
 from social_django.utils import load_strategy
 import typing
-
+from django.contrib.auth import logout
 
 def check_and_update_vk_token(social: object,
                               request: object,
@@ -25,8 +25,10 @@ def check_and_update_vk_token(social: object,
     token_auth_time = float(social.extra_data['auth_time'])
     linux_timestamp_now = datetime.now().timestamp()
     if (token_auth_time + token_expires) < linux_timestamp_now:
-        strategy = load_strategy(request)
-        social.refresh_token(strategy)
+        logout(request)
+        social = None
+        # strategy = load_strategy(request)
+        # social.refresh_token(strategy)
     return social
 
 
