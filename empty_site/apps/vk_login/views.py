@@ -12,7 +12,6 @@ def index(request):
     """
     template = 'vk_login/not_authentificated.html'
     if request.user.social:
-        # request.user.social['friends'] = get_vk_friends(request.user.social.extra_data['access_token'])
         request.user.social.friends = get_vk_friends(request.user.social.extra_data['access_token'])
         template = 'vk_login/authentificated.html'
     return render(request, template)

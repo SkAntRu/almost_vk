@@ -14,12 +14,11 @@
     <div class="login">
         {% if user.is_authenticated %}
         <a href="{% url 'vk_login:logout' %}">
-            <strong>{{ user.first_name }}</strong><br/>
-            <strong>Logout</strong>
+            <strong>Выйти</strong>
         </a>
         {% else %}
         <a href="{% url 'social_auth:begin' 'vk-oauth2' %}">
-            <strong>LoginVK</strong>
+            <strong>Авторизоваться</strong>
         </a>
         {% endif %}
     </div>
