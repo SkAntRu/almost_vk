@@ -3,6 +3,8 @@ import os
 import django_heroku
 
 SECRET_KEY = os.environ['SECRET_KEY']
+SOCIAL_AUTH_VK_OAUTH2_KEY = os.environ['SOCIAL_AUTH_VK_OAUTH2_KEY']
+SOCIAL_AUTH_VK_OAUTH2_SECRET = os.environ['SOCIAL_AUTH_VK_OAUTH2_SECRET']
 
 django_heroku.settings(locals())
 
