@@ -6,7 +6,9 @@ from social_django.utils import load_strategy
 import typing
 
 
-def check_and_update_vk_token(social: object) -> object:
+def check_and_update_vk_token(social: object,
+                              request: object,
+                              ) -> object:
     """
     Check if vk token is valid and has not expired
 
@@ -23,7 +25,7 @@ def check_and_update_vk_token(social: object) -> object:
     token_auth_time = float(social.extra_data['auth_time'])
     linux_timestamp_now = datetime.now().timestamp()
     if (token_auth_time + token_expires) < linux_timestamp_now:
-        strategy = load_strategy()
+        strategy = load_strategy(request)
         social.refresh_token(strategy)
     return social
 
@@ -48,7 +50,7 @@ def is_social_auth(request, provider: str) -> object:
         social = None
 
     if social:
-        social = check_and_update_vk_token(social)
+        social = check_and_update_vk_token(social=social, request=request)
     request.user.social = social
     return request
 

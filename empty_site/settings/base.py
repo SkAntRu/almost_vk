@@ -34,6 +34,7 @@ MIDDLEWARE = [
 ]
 
 # python_social_auth
+SOCIAL_AUTH_VK_APP_USER_MODE = 1
 AUTHENTICATION_BACKENDS = (
     'social_core.backends.vk.VKOAuth2',
     'django.contrib.auth.backends.ModelBackend',
